@@ -3,7 +3,7 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 
 # 换成你的 MySQL 密码
-SQLALCHEMY_DATABASE_URL = "mysql+pymysql://root:5608lj+-@127.0.0.1:3306/fastapi_demo"
+SQLALCHEMY_DATABASE_URL = "mysql+pymysql://root:5608lj+-@host.docker.internal:3306/fastapi_demo"
 
 engine = create_engine(SQLALCHEMY_DATABASE_URL)
 
