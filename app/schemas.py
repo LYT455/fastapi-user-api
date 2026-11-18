@@ -1,13 +1,18 @@
-from pydantic import BaseModel
+from pydantic import BaseModel, EmailStr
 
 class UserBase(BaseModel):
+    email: EmailStr
     name: str
 
 class UserCreate(UserBase):
-    pass
+    password: str
 
 class UserResponse(UserBase):
     id: int
 
     class Config:
-        from_attributes = True # 允许从 ORM 模型读取数据
+        from_attributes = True
+
+# AI 对话的请求体
+class ChatRequest(BaseModel):
+    prompt: str
