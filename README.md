@@ -35,44 +35,22 @@
 1. OAuth2 身份认证 (Swagger 绿锁授权)
 
 通过密码流获取 Token，解锁受保护接口
-
 <img width="532" height="380" alt="d3c9091616775a9a3e86b5ce04f390d2" src="https://github.com/user-attachments/assets/88a9e12a-a5b1-4210-a5a7-0793c07ce7d9" />
-
-
-2. 用户信息鉴权隔离 (/users/me)
-
+2. 用户信息鉴权隔离（/users/me）
 携带 Token 请求，系统自动解析当前用户身份
-
-<img width="306" height="184" alt="0763118cbeb8d4ac765e622aedf8963c" src="https://github.com/user-attachments/assets/9ee90f15-6127-4a8b-bca1-39e8c258df3a" />
-
-
-3. AI 大模型接口调用 (/chat)
-
+<img width="306" height="184" alt="用户信息鉴权隔离" src="./assets/user_me.png">
+3. AI 大模型接口调用（/chat）
 携带 JWT 请求头，与 DeepSeek 大模型进行交互
+<img width="909" height="428" alt="AI大模型接口调用" src="./assets/ai_chat_1.png">
+<img width="740" height="208" alt="AI接口返回示例" src="./assets/ai_chat_2.png">
 
-
-
-<img width="909" height="428" alt="81cf95b8b3eb6afea4f2a1e82692bc00" src="https://github.com/user-attachments/assets/d646c651-5b97-45dc-9741-6a3ab693a40e" />
-
-<img width="740" height="208" alt="3f0f12b546dd7a497d2872e1644795fd" src="https://github.com/user-attachments/assets/e9b24b5f-2081-40b6-8373-546ce98d23a1" />
-
-
-
-4. Docker 容器化部署
-
+ 4. Docker 容器化部署
 镜像构建成功，容器处于 Up 运行状态，端口映射成功
+<img width="851" height="169" alt="Docker容器部署" src="./assets/docker_run.png">
 
-<!-- 把【图6：docker ps 的终端截图】拖到这里 -->
-
-
-<img width="851" height="169" alt="94535576699c796168aed96ed1d95a79" src="https://github.com/user-attachments/assets/97a49215-b4cb-4a36-8084-1daeabfb4450" />
-
-
-5. 数据库持久化验证 (密码加密存储)
-
+ 5. 数据库持久化验证（密码加密存储）
 用户信息成功写入 MySQL，密码字段已进行 Bcrypt 哈希加密
-
-<img width="332" height="39" alt="屏幕截图 2026-11-19 213056" src="https://github.com/user-attachments/assets/c5d6b2af-06ff-4d96-8b6a-99495a26aeba" />
+<img width="332" height="39" alt="数据库密码哈希存储" src="./assets/mysql_bcrypt.png">
 
 
 ---
